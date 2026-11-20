@@ -1,11 +1,334 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 68px;
+  padding: 0 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 10%, transparent);
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 15px;
+}
+
+.nav-right i,
+.nav-right span {
+  cursor: pointer;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.profile-box img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 82vh;
+  width: 100%;
+  /* Replace URL below with your actual banner image */
+  background: url('https://unsplash.com') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 4%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to right, rgba(20, 20, 20, 0.9) 25%, rgba(20, 20, 20, 0.2) 65%, transparent),
+    linear-gradient(to top, #141414 5%, transparent 35%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  margin-top: 40px;
+}
+
+.n-series {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.n-letter {
+  color: #e50914;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.series-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #d2d2d2;
+}
+
+.show-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: 76px;
+  font-weight: 400;
+  line-height: 0.92;
+  margin-bottom: 18px;
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.ranking {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.top-10-badge {
+  background-color: #e50914;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 4px 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.top-10-badge strong {
+  display: block;
+  font-size: 13px;
+}
+
+.rank-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.synopsis {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #f3f3f3;
+  margin-bottom: 24px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-play {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-info {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #ffffff;
+}
+
+/* Maturity Rating Badge */
+.maturity-badge {
+  position: absolute;
+  right: 0;
+  bottom: 24%;
+  background-color: rgba(51, 51, 51, 0.65);
+  border-left: 3px solid #dcdcdc;
+  padding: 6px 36px 6px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+/* Row Section */
+.row-section {
+  position: relative;
+  z-index: 3;
+  margin-top: -65px;
+  padding: 0 4% 40px;
+}
+
+.row-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.card {
+  position: relative;
+  height: 145px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #222;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.06);
+  z-index: 10;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.card-n {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  color: #e50914;
+  font-weight: 900;
+  font-size: 18px;
+  z-index: 2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+.top10-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.05;
+  padding: 3px 5px;
+  text-align: center;
+  z-index: 2;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 10%, transparent 65%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px;
+  text-align: center;
+}
+
+.card-logo {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.bold-logo {
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.card-badges {
+  display: flex;
+  gap: 4px;
+}
+
+.badge-red {
+  background-color: #e50914;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.badge-white {
+  background-color: #ffffff;
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
