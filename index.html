@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grid Layout</title>
+  <style>
+    body {
+      background-color: #23274d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 150px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 10px;
+    }
+
+    /* Color classes matching the diagram */
+    .green  { background-color: green; }
+    .red    { background-color:red; }
+    .yellow { background-color: yellow; }
+
+    /* Spanning items */
+    .left-tall {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4; /* Spans all 3 rows */
+    }
+
+    .top-wide {
+      grid-column: 2 / 4; /* Spans columns 2 and 3 */
+      grid-row: 1 / 2;
+    }
+
+    .right-tall {
+      grid-column: 4 / 5;
+      grid-row: 2 / 4; /* Spans rows 2 and 3 */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <!-- Row 1 -->
+    <div class="green left-tall"></div>
+    <div class="green top-wide"></div>
+    <div class="red"></div>
+
+    <!-- Row 2 -->
+    <div class="yellow"></div>
+    <div class="red"></div>
+    <div class="green right-tall"></div>
+
+    <!-- Row 3 -->
+    <div class="red"></div>
+    <div class="yellow"></div>
+  </div>
+
+</body>
+</html>
